@@ -72,3 +72,53 @@ console.log(globalVar);
 const a = "b";
 a = "a";
 console.log(a);
+
+// crear objetos con variables
+let nombre= "miguel";
+let edad = 27;
+
+const obj = { name: nombre, age: edad }
+console.log(obj);
+
+// ES6
+const obj2= {nombre, edad}
+console.log(obj2);
+
+// Funciones
+const nombres = [
+    {name: "Miguel", age: 27},
+    {name: "Jesica", age: 32}
+]
+
+let listaDeNombres= nombres.map(function (item) {
+    console.log(item.name);
+});
+// Funcion anonima de flecha ES6
+let listaDeNombres2 = nombres.map(item => console.log(item.name));
+
+// Funcion de flecha con parametros
+let listaDeNombres3 = (nombre, edad, pais)=>{
+    // codigo de la funcion
+}
+
+// Funcion de flecha con un parametro
+let listaDeNombres4 = param => {
+
+}
+
+// funcion de flecha con un parametro y una sola linea de codigo, LAS FUNCIONES DE FLECHA retornan un valor 
+const cuadrado = num => num * num;
+
+// Promesas (algo va a pasar) sustituyen las cascadas de callbacks que podian extenderse mucho
+const holaPromesa = ()=>{
+    return new Promise((resolve, reject) =>{ 
+        if (false){
+            resolve("hey!")
+        }else{
+            reject("Ups")
+        }
+    });
+}
+
+holaPromesa().then(response => console.log(response)) //then permite obtener la respuesta se puede agregar mas de 1
+.catch(error => console.log(error)); //catch muestra el error en caso de que no se pueda cumplir la promesa
