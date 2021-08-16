@@ -122,3 +122,44 @@ const holaPromesa = ()=>{
 
 holaPromesa().then(response => console.log(response)) //then permite obtener la respuesta se puede agregar mas de 1
 .catch(error => console.log(error)); //catch muestra el error en caso de que no se pueda cumplir la promesa
+
+// Clases
+class Calculadora {
+    constructor(){
+        this.valorA = 0;
+        this.valorB = 0;
+    }
+    suma (valorA, valorB){
+        this.valorA = valorA;
+        this.valorB = valorB;
+        return this.valorA + this.valorB;
+    }
+}
+
+const calc = new Calculadora();
+
+console.log(calc.suma(2,6));
+
+// import y export trabajando con modulos
+import {hola} from "./modulo";
+// import para node
+const hola = require("./modulo");
+
+hola();
+
+// Generadores es una funcion especial que retorna una serie de valores segun el algoritmo
+
+function* holaMundo(){
+    if(true){
+        yield "Hola, " //yield retorna
+    }
+    if (true){
+        yield "Mundo"
+    }
+}
+
+const generadorHola = holaMundo();
+
+console.log(generadorHola.next().value);
+console.log(generadorHola.next().value);
+console.log(generadorHola.next().value);
