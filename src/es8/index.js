@@ -31,3 +31,31 @@ console.log(string.padEnd(12, ' ------'));
 const obj ={
     nombre: "miguel",
 }
+
+// asinc y await
+const holaMundo = ()=>{
+    return new Promise((resolve, reject)=>{
+        (true)
+        ? setTimeout(resolve("Hola mundo"), 3000)
+        : reject(new Error("test error"))
+    });
+}
+
+const asyncHola = async ()=>{
+    const hola = await holaMundo();
+    console.log(hola);
+}
+
+asyncHola();
+
+// forma propuesta para manejar de forma correcta los errores
+const otraFuncion = async ()=>{
+    try {
+        const hola = await holaMundo();
+        console.log(hola);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+otraFuncion();
